@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html ng-app="phonecatApp">
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="bower_components/angular/angular.min.js"></script>
+        <script src="js/controllers.js"></script>
+    </head>
+    <body ng-controller="PhoneListCtrl">
+        <header ng-include="'templates/header.html'"></header>
+        <div>
+            <h1>Antal telefoner: {{phones.length}}</h1>
+            <label>Sök:<input ng-model="query" /></label> 
+            <label>Fallande ordning<input type="checkbox" ng-model="fallande" /></label>
+            <ol>
+                <li ng-repeat="phone in phones | filter:query | orderBy:'name':fallande">Namn:{{phone.name}} Beskrivning:{{phone.snippet}}</li>
+            </ol>
+        </div>
+    </body>
+</html>

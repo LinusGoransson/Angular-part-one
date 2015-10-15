@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html ng-app>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="bower_components/angular/angular.min.js"></script>
+    </head>
+    <body>
+        <header ng-include="'templates/header.html'"></header>
+        <div>{{ name || "Nisse" }}</div>
+        <input type="text" ng-model="name" placeholder="Vad heter du?" />
+    </body>
+</html>
